@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Cities & Communities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="splash.css">
+    <link rel="icon" href="Images/UN-GT-initiative-removebg-preview.png" type="image/png">
+</head>
+<body>
+    <div class="bg-video">
+        <video autoplay muted loop id="myVideo">
+            <source src="videos/bg-video2.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        
+        <div class="content-container">
+            <div class="logo">
+                <!-- Placeholder for logo -->
+                <div style="width: 60px; height: 60px; background: #5CDB95; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
+                    <i class="fas fa-leaf" style="color: #05386B; font-size: 30px;"></i>
+                </div>
+            </div>
+            
+            <div class="heading">
+                <h1>Sustainable Cities & Communities</h1>
+                <p>Building Greener Cities, Creating Brighter Futures! 🌱🏙️</p>
+                
+                <div class="loader-container">
+                    <div class="loader"></div>
+                </div>
+                
+                <div class="btn-container">
+                    <a href="#" class="btn">Get Started</a>
+                    <a href="#" class="btn btn-outline">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">Loading resources... <span id="progress-percent">0%</span></div>
+            </div>
+            
+            <div class="team-corner">
+                <div class="team-label">OUR TEAM</div>
+                <div class="team-members">
+                <ul>
+                    <li>Natheeshan Sithravel</li>
+                    <li>Mohamed Raji Abdhullla Murshidh</li>
+                    <li>Godakande Arachchige Sasindu Priyaranga</li>
+                    <li>Priyadharshani Prabakaran</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulate loading progress
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressPercent = document.getElementById('progress-percent');
+            let counter = 0;
+            
+            const interval = setInterval(() => {
+                counter += 1;
+                progressPercent.textContent = counter + '%';
+                
+                if (counter >= 100) {
+                    clearInterval(interval);
+                }
+            }, 30);
+        });
+
+        // Redirect to the main page after 4 seconds
+            setTimeout(() => {
+                gsap.to("body", { x: "-100%", duration: 0.5, ease: "power2.inOut", onComplete: () => {
+                    window.location.href = "index.html";
+                }});
+            }, 4000);
+    </script>
+    
+</body>
+</html>
